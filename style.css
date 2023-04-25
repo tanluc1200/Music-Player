@@ -1,0 +1,274 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+}
+
+*:active {
+    cursor: none;
+}
+
+html {
+    font-size: 6.25%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16rem;
+    background: #108dc7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #ef8e38,
+        #108dc7
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ef8e38,
+        #108dc7
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    padding-inline: 20px;
+    padding-block: 20px 0;
+    width: 500px;
+    margin-inline: auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background: #ec008c;
+    background: linear-gradient(to bottom, #fc6767, #ec008c);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header > * {
+    color: white;
+    font-size: 24rem;
+}
+
+.body {
+    text-align: center;
+}
+
+.thumbnail {
+    overflow: hidden;
+    min-height: 280px;
+    margin: 50px auto 20px;
+}
+
+.thumbnail-cd {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.controls {
+    color: #ec008c;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.playlist-title {
+    text-transform: capitalize;
+}
+.titleSong {
+    font-weight: 900;
+    font-size: 25rem;
+    text-transform: uppercase;
+    /* Thiết lập background gradient */
+    background: #fdfc47; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #24fe41,
+        #fdfc47
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #24fe41,
+        #fdfc47
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* Thiết lập hiển thị chữ nếu background không hoạt động */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    text-transform: capitalize;
+    color: white;
+    font-size: 20rem;
+}
+
+.inputSongGroup {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-block: 20px 15px;
+}
+
+.inputSong {
+    width: 70%;
+}
+
+#inputSong {
+    width: 100%;
+    position: relative;
+    top: 2px;
+}
+
+.currentTime {
+    width: 15%;
+}
+
+.durationSong {
+    width: 15%;
+}
+
+.btn {
+    padding: 10px 0;
+    width: 20%;
+    font-size: 25px;
+}
+.fa-solid.active {
+    color: black;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    border-radius: 10px;
+    background: #bbd2c5;
+    background: linear-gradient(to right, #536976, #bbd2c5);
+    margin-bottom: 10px;
+}
+
+.playlist {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    height: calc(100vh - 300px);
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+.playlist-block {
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #00416a;
+    background: linear-gradient(to right, #ffe000, #799f0c, #00416a);
+}
+.playlist-block.active {
+    opacity: 1;
+    background: #c9ffbf; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffafbd, #c9ffbf);
+    background: linear-gradient(to right, #ffafbd, #c9ffbf);
+}
+.playlist-block.active h2,
+.playlist-block.active p {
+    color: black;
+}
+.label-input {
+    display: block;
+    height: 5px;
+    width: 100%;
+    background: #000;
+}
+.playlist-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+.playlist-singer {
+    text-transform: uppercase;
+}
+.btn-repeat.active i,
+.btn-shuffle.active i {
+    color: black;
+}
+.header-search {
+    position: relative;
+}
+.header-search:hover .form-search {
+    /* display: block; */
+}
+.form-search {
+    position: absolute;
+    right: 0;
+    top: 38px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    transition: 300ms ease-in-out;
+    visibility: hidden;
+}
+.form-search.active {
+    /* visibility: visible; */
+}
+.form-search-input {
+    position: relative;
+    padding: 10px;
+    width: 460px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    color: black;
+}
+.fa-times {
+    position: absolute;
+    z-index: 999;
+    color: #000;
+    right: 10px;
+}
+.song-item {
+    position: absolute;
+    z-index: 9999999;
+    right: 0;
+    top: 0;
+    background: #000;
+}
+/* Thanh cuộn */
+::-webkit-scrollbar {
+    position: relative;
+    width: 5px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover on handle */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} /*# sourceMappingURL=style.css.map */

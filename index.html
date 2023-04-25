@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Music Player</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section class="content">
+            <header class="header">
+                <i class="fa-solid fa-house"></i>
+                <h4>Music Player</h4>
+                <div class="header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="form-search">
+                        <input
+                            class="form-search-input"
+                            type="text"
+                            placeholder="Nhập nội dung cần tìm kiếm"
+                        />
+                        <i id="close-icon" class="fa-solid fa-times"></i>
+                    </div>
+                </div>
+            </header>
+            <section class="body">
+                <div class="thumbnail">
+                    <img class="thumbnail-cd" alt="" />
+                    <div class="inputSongGroup">
+                        <p class="currentTime">0:00</p>
+                        <div class="inputSong">
+                            <!-- <label class="label-input" for="inputSong"></label> -->
+                            <input
+                                id="inputSong"
+                                type="range"
+                                min="0"
+                                max="100"
+                                value="0"
+                                step="1"
+                            />
+                        </div>
+                        <p class="durationSong"></p>
+                    </div>
+                    <h3 class="title">
+                        <span class="titleSong"></span>
+                    </h3>
+                    <audio class="audio" src=""></audio>
+                </div>
+                <div class="controls">
+                    <div class="btn btn-shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                    <div class="btn btn-prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="btn btn-play">
+                        <i class="fa-solid fa-play btn-toggle-play"></i>
+                    </div>
+                    <!-- <i class="fa-solid fa-pause"></i> -->
+                    <div class="btn btn-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="btn btn-repeat">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                </div>
+            </section>
+            <div class="line"></div>
+            <section class="playlist">
+                <div class="playlist-block">
+                    <img class="playlist-img" src="" alt="" />
+                    <div class="playlist-row">
+                        <h2 class="playlist-title"></h2>
+                        <p class="playlist-singer"></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <script src="./style1.js"></script>
+    </body>
+</html>
